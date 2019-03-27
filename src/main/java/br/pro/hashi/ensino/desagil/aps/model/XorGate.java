@@ -15,6 +15,7 @@ public class XorGate extends Gate {
     }
 
 
+
     @Override
     public boolean read() {
         return nand4.read();
@@ -23,22 +24,22 @@ public class XorGate extends Gate {
 
     @Override
     public void connect(int inputPin, SignalEmitter emitter) {
-        if (inputPin < 0 || inputPin > 1) {
+        if (inputPin < 0 || inputPin > 1){
             throw new IndexOutOfBoundsException(inputPin);
         }
         if (inputPin == 0) {
             nand1.connect(0, emitter);
-            nand2.connect(0, emitter);
+            nand2.connect(0,emitter);
 
         }
         if (inputPin == 1) {
             nand1.connect(1, emitter);
             nand3.connect(1, emitter);
         }
-        nand2.connect(1, nand1);
+        nand2.connect(1,nand1);
         nand3.connect(0, nand1);
         nand4.connect(0, nand2);
-        nand4.connect(1, nand3);
+        nand4.connect(1,nand3);
 
 
     }
