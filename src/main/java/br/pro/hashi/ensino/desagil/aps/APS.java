@@ -13,7 +13,7 @@ public class APS {
         model.add(new NotGate());
         model.add(new OrGate());
         model.add(new AndGate());
-        model.add(new XorGate());
+        boolean add = model.add(new XorGate());
 
         View view = new View(model);
 
